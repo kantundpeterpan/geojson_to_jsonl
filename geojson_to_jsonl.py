@@ -31,7 +31,7 @@ def convert_geojson_to_jsonl(input_file: str, output_file: str) -> None:
                 try:
                     props = obj['properties']
                     # Convert geometry to string representation
-                    props['geometry'] = json.dumps(obj['geometry'])
+                    props['geometry'] = obj['geometry']
                     json.dump(props, fp=ofp)
                     print('', file=ofp)
                 except KeyError as e:
